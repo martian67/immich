@@ -53,7 +53,7 @@ export class UserCore {
       user.shouldChangePassword = dto.shouldChangePassword ?? user.shouldChangePassword;
       user.profileImagePath = dto.profileImagePath ?? user.profileImagePath;
 
-      return this.userRepository.update(id, user);
+      return this.userRepository.update(id, dto);
     } catch (e) {
       Logger.error(e, 'Failed to update user info');
       throw new InternalServerErrorException('Failed to update user info');
